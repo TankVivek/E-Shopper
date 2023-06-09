@@ -11,7 +11,7 @@ const productrouter = require("../router/productrouter");
 const adminrouter = require("../router/adminrouter");
 const cookieParser = require("cookie-parser");
 const port = process.env.port || 3000;
-const dburl = process.env.dburl;
+const dburl = process.env.dburl
 
 const viewpath = path.join(__dirname, "../templetes/view");
 const partialpath = path.join(__dirname, "../templetes/partial");
