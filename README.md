@@ -1,4 +1,4 @@
-# E-Shopper
+# <span style="font-size:32px">E-Shopper</span>
 
 E-Shopper is a web application that offers a seamless and secure e-commerce experience. It allows users to browse and purchase products from the e-commerce store.
 
@@ -49,4 +49,3 @@ You can access the live demo of the E-Shopper web application [here](https://e-s
 Please note that the live demo showcases the functionality of the application, but it may not reflect the latest updates or changes made to the project.
 
 Feel free to explore the application and experience the e-commerce features it offers.
-
