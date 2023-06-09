@@ -6,6 +6,10 @@
     <title>Document</title>
     <style>
       body{ margin: 0px; }
+      
+        .input{
+          height: 45px;
+        }
 
     </style>
     {{! ******************** Bootstrap Link **************************** }}
@@ -17,13 +21,13 @@
     />
 
   </head>
-  <body style="background-color: rgb(225, 142, 156);">
+  <body style="background-color: rgb(255, 255, 255);">
     <section class="h-100 gradient-form" style="">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-xl-10">
             <div
-              style="background-color:rgb(225, 142, 156) ;"
+              style="background-color:rgb(255, 255, 255) ;"
               class="rounded-3"
             >
 
@@ -36,59 +40,49 @@
          
                     <form style="width:300px;margin-left:250px"action="/adduser" method="post">
                       <span class="text-success lead">{{rgmsg}}</span>
+
                       <div class="form-outline mb-4">
-                        <input
+                        <input 
                           type="text"
                           id="uname"
                           name="uname"
-                          class="form-control lead"
-                          placeholder=""
+                          class="form-control lead input"
+                          placeholder="Username"
                         />
-                        <label
-                          class="form-label"
-                          for="form2Example11"
-                        >Username</label>
+                       
                       </div>
 
                       <div class="form-outline mb-4">
-                        <input
+                        <input 
                           type="email"
                           id="email"
                           name="email"
-                          class="form-control lead"
-                          placeholder=""
+                          class="form-control lead input"
+                          placeholder="Email"
                         />
-                        <label
-                          class="form-label"
-                          for="form2Example11"
-                        >Email</label>
+                      
                       </div>
 
                       <div class="form-outline mb-4">
-                        <input
+                        <input 
                           type="text"
                           name="pnumber"
                           id="pnumber"
-                          class="form-control lead"
-                          placeholder=""
+                          class="form-control lead input"
+                          placeholder="Mobile No"
                         />
-                        <label
-                          class="form-label"
-                          for="form2Example11"
-                        >MobileNo</label>
+                  
                       </div>
 
                       <div class="form-outline mb-4">
-                        <input
+                        <input 
                           type="text"
                           id="pass"
                           name="pass"
-                          class="form-control lead"
+                          class="form-control lead input"
+                          placeholder="Password"
                         />
-                        <label
-                          class="form-label"
-                          for="form2Example22"
-                        >Password</label>
+                        
                       </div>
 
                       <div class="text-center pt-1 mb-5 pb-1">
@@ -96,6 +90,7 @@
                           type="submit"
                           class="btn btn-success"
                         >Submit</button>
+                         &nbsp; &nbsp;
                         <button
                           type="reset"
                           class="btn btn-danger"
@@ -105,7 +100,8 @@
                       <div
                         class="d-flex align-items-center justify-content-center pb-4"
                       >
-                        <p class="mb-0 me-2">Already have an account?</p>
+                        <p class="mb-0 me-2">Already have an account ? </p>
+                         &nbsp;&nbsp;
                         <a
                           href="/login"
                           type="button"
