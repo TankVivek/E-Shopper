@@ -24,6 +24,7 @@ p_router.post("/addproduct", async (req, res) => {
 p_router.get("/addtocart", auth, async (req, res) => {
   const userid = req.user._id;
   const pid = req.query.pid;
+
   try {
     const addproduct = await Cart({
       userid: userid,

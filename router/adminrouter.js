@@ -22,6 +22,8 @@ const upload = multer({ storage: storage });
 adminrouter.get("/adminpage", (req, res) => {
   res.render("adminlogin");
 });
+
+
 adminrouter.post("/addadmin", async (req, res) => {
   const admin = await Admin(req.body);
 
@@ -32,6 +34,8 @@ adminrouter.post("/addadmin", async (req, res) => {
     res.send(error);
   }
 });
+
+
 adminrouter.post("/adminlogin", async (req, res) => {
   const email = req.body.email;
   const pass = req.body.pass;
@@ -55,6 +59,8 @@ adminrouter.post("/adminlogin", async (req, res) => {
     res.render("adminlogin", { loginmsg: "Admin user or password invalide" });
   }
 });
+
+
 adminrouter.get("/adminlogout", adminauth, async (req, res) => {
   try {
     const admindata = req.admin;
@@ -71,6 +77,8 @@ adminrouter.get("/adminlogout", adminauth, async (req, res) => {
     res.status(404).send("404:some: error");
   }
 });
+
+
 adminrouter.get("/adminlogoutall", adminauth, async (req, res) => {
   const admindata = req.admin;
 
@@ -85,6 +93,8 @@ adminrouter.get("/adminlogoutall", adminauth, async (req, res) => {
 adminrouter.get("/addproduct", (req, res) => {
   res.render("addproduct");
 });
+
+
 adminrouter.post("/addedproduct", upload.single("file"), async (req, res) => {
   const pid = await req.body.id;
 
@@ -118,6 +128,8 @@ adminrouter.post("/addedproduct", upload.single("file"), async (req, res) => {
     console.log(error);
   }
 });
+
+
 adminrouter.get("/productdetaile", async (req, res) => {
   try {
     const productdetaile = await Product.find();
@@ -127,6 +139,8 @@ adminrouter.get("/productdetaile", async (req, res) => {
     console.log(error);
   }
 });
+
+
 adminrouter.get("/productdelete", async (req, res) => {
   const pid = req.query.did;
 
@@ -139,6 +153,7 @@ adminrouter.get("/productdelete", async (req, res) => {
     console.log(error);
   }
 });
+
 adminrouter.get("/productedit", async (req, res) => {
   const pid = req.query.pid;
 
