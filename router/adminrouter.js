@@ -10,7 +10,7 @@ const multer = require("multer");
 //*********************** image upload multor*********************** */
 var storage = multer.diskStorage({
   destination: function (req, file, callback) {
-    callback(null, "./public/img");
+    callback(null, "../public/img");
   },
   filename: function (req, file, callback) {
     callback(null, Date.now() + "_ " + file.originalname);
@@ -23,13 +23,17 @@ adminrouter.get("/adminpage", (req, res) => {
   res.render("adminlogin");
 });
 
+adminrouter.get("/addadmin", (req, res)=> {
+  res.render("addadmin");
+})
 
 adminrouter.post("/addadmin", async (req, res) => {
   const admin = await Admin(req.body);
 
   try {
     const admindata = await admin.save();
-    res.send(admindata);
+    // res.send(admindata);
+    res.render("addadmin",{addmsg:"add successfully"})
   } catch (error) {
     res.send(error);
   }

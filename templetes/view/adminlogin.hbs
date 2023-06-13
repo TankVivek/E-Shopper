@@ -1,86 +1,69 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      body{ margin: 0px; }
-
+        body {
+            margin: 0px;
+        }
+        
+        input {
+            border: 1px solid black;
+            border-radius: 6px;
+            height: 45px;
+        }
     </style>
     {{! ******************** Bootstrap Link **************************** }}
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous" />
 
-  </head>
-  <body style="background-color: rgb(225, 142, 156);">
+</head>
+
+<body style="background-color: rgb(255, 255, 255);">
     <section class="h-100 gradient-form" style="">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-xl-10">
-            <div
-              style="background-color:rgb(225, 142, 156) ;"
-              class="rounded-3"
-            >
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              
+                <div class="col-xl-10">
+                    <div style="background-color:rgb(255, 255, 255) ;" class="rounded-3">
+                      
+                        <div class="p-md-5 mx-md-4">
+                            <div>
+                                <h2 style="color:rgba(0, 0, 0, 0.767);" class="text-center">Admin Login</h2>
+                            </div>
+                            <br />
+                            <form style="width: 300px; margin-left: 250px" action="/adminlogin" method="post">
+                                <span class="text-danger lead">{{loginmsg}}</span>
+                                <span class="text-danger lead">{{login}}</span>
 
-              <div class="p-md-5 mx-md-4">
-                <div>
-                  <h2
-                    style="color:rgba(0, 0, 0, 0.767);"
-                    class="text-center"
-                  >Admin-Login</h2>
+                                <div class="form-outline mb-4">
+                                     <input class="col-12" type="email" id="email" name="email" placeholder="Email">
+                                     <br> <br>
+                                    <input class="col-12" type="password" id="pass" name="pass" placeholder="Password">
+                                </div>
+                                <br>
+                                <div class="text-center pt-1 mb-5 pb-1">
+                                    <button type="submit" class="btn btn-success">Login</button> 
+                                    &nbsp; &nbsp; 
+                                    <button type="reset" class="btn btn-danger">Reset</button>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center pb-4">
+                                    <p class="mb-0 me-2">Don't have an account?</p> &nbsp; &nbsp; 
+                                    <a href="/addadmin" type="button" class="btn btn-outline-danger"> Create now</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <br />
-
-                <form
-                  style="width:300px;margin-left:250px"
-                  action="/adminlogin"
-                  method="post"
-                >
-                  <span class="text-danger lead">{{loginmsg}}</span>
-                  <span class="text-danger lead">{{login}}</span>
-
-                  <div class="form-outline mb-4">
-                    <input
-                      type="email"
-                      id="email"
-                      class="form-control lead"
-                      placeholder=""
-                      name="email"
-                    />
-                    <label class="form-label" for="form2Example11">Email</label>
-                  </div>
-
-                  <div class="form-outline mb-4">
-                    <input
-                      type="password"
-                      id="pass"
-                      name="pass"
-                      class="form-control lead"
-                    />
-                    <label
-                      class="form-label"
-                      for="form2Example22"
-                    >Password</label>
-                  </div>
-
-                  <div class="text-center pt-1 mb-5 pb-1">
-                    <button type="submit" class="btn btn-success">Login</button>
-                    <button type="reset" class="btn btn-danger">Reset</button>
-                  </div>
-
-                </form>
-
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
+</body>
 
-  </body>
 </html>
