@@ -1,47 +1,111 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      body{ margin: 0px; }
-      
-        .input{
-          height: 45px;
+        body {
+            margin: 0px;
         }
-
+        
+        .input {
+            height: 45px;
+        }
+        
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .form-wrapper {
+            background-color: rgb(255, 255, 255);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%; /* Adjusted width for mobile devices */
+            margin: 0 auto; /* Center the form horizontally */
+        }
+        
+        h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-input {
+            margin-bottom: 20px;
+        }
+        
+        .form-input input {
+            width: 100%;
+        }
+        
+        .form-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .form-buttons button {
+            margin-right: 10px;
+        }
+        
+        .existing-account {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .existing-account p {
+            margin: 0;
+            margin-right: 5px;
+        }
+        
+        /* Media Query for Mobile Devices */
+        @media (max-width: 480px) {
+            .form-wrapper {
+                padding: 20px; /* Adjusted padding for smaller screens */
+            }
+            
+            h3 {
+                font-size: 24px; /* Adjusted font size for smaller screens */
+                text-align: center;
+            }
+            
+            .form-wrapper, .form-input, .form-buttons, .existing-account {
+                width: 100%;
+            }
+        }
+        
+        /* Media Query for Laptop/Desktop Screens */
+        @media (min-width: 768px) {
+            .form-wrapper {
+                max-width: 600px;
+            }
+        }
     </style>
-    {{! ******************** Bootstrap Link **************************** }}
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+    <!-- ******************** Bootstrap Link **************************** -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous" />
 
-  </head>
-  <body style="background-color: rgb(255, 255, 255);">
-    <section class="h-100 gradient-form" style="">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-xl-10">
-            <div
-              style="background-color:rgb(255, 255, 255) ;"
-              class="rounded-3"
-            >
+</head>
 
-              <div class="p-md-5 mx-md-4">
-                <div>
-                      <h3 class="text-center">Register</h3>
-
-                    </div>
-                    <br>
-         
-                    <form style="width:300px;margin-left:250px"action="/adduser" method="post">
-                      <span class="text-success lead">{{rgmsg}}</span>
-
-                      <div class="form-outline mb-4">
+<body style="background-color: rgb(255, 255, 255);">
+    <section class="h-100 gradient-form">
+        <div class="container">
+            <div class="form-wrapper">
+                <h3>Register</h3>
+                <form action="/adduser" method="post">
+                    <span class="text-success lead">{{rgmsg}}</span>
+                    <div class="form-input">
                         <input 
                           type="text"
                           id="uname"
@@ -49,10 +113,8 @@
                           class="form-control lead input"
                           placeholder="Username"
                         />
-                       
-                      </div>
-
-                      <div class="form-outline mb-4">
+                    </div>
+                    <div class="form-input">
                         <input 
                           type="email"
                           id="email"
@@ -60,10 +122,8 @@
                           class="form-control lead input"
                           placeholder="Email"
                         />
-                      
-                      </div>
-
-                      <div class="form-outline mb-4">
+                    </div>
+                    <div class="form-input">
                         <input 
                           type="text"
                           name="pnumber"
@@ -71,10 +131,8 @@
                           class="form-control lead input"
                           placeholder="Mobile No"
                         />
-                  
-                      </div>
-
-                      <div class="form-outline mb-4">
+                    </div>
+                    <div class="form-input">
                         <input 
                           type="text"
                           id="pass"
@@ -82,40 +140,29 @@
                           class="form-control lead input"
                           placeholder="Password"
                         />
-                        
-                      </div>
-
-                      <div class="text-center pt-1 mb-5 pb-1">
+                    </div>
+                    <div class="form-buttons">
                         <button
                           type="submit"
                           class="btn btn-success"
                         >Submit</button>
-                         &nbsp; &nbsp;
                         <button
                           type="reset"
                           class="btn btn-danger"
                         >Reset</button>
-                      </div>
-
-                      <div
-                        class="d-flex align-items-center justify-content-center pb-4"
-                      >
-                        <p class="mb-0 me-2">Already have an account ? </p>
-                         &nbsp;&nbsp;
+                    </div>
+                    <div class="existing-account">
+                        <p>Already have an account?</p>
                         <a
                           href="/login"
                           type="button"
                           class="btn btn-outline-danger"
                         >Login now</a>
-                      </div>
-
-                    </form>
-
+                    </div>
+                </form>
             </div>
-          </div>
         </div>
-      </div>
     </section>
+</body>
 
-  </body>
 </html>
